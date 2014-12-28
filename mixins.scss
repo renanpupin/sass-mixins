@@ -1,5 +1,6 @@
 //mixins.scss
 
+//mixin font-size
 @mixin font-size($size) {
     font-size: $size;
     line-height: $base-line-height*$size;
@@ -47,7 +48,7 @@
     user-select: none;
 }
 
-//mixin center
+// mixin center
 @mixin center(){
   -webkit-transform: translate(-50%,-50%);
       -ms-transform: translate(-50%,-50%);
@@ -65,7 +66,30 @@
   transition: $time;
 }
 
-//mixin clearfix
+// mixin animation
+@mixin animation($parameters...){
+  -webkit-animation: $parameters;
+     -moz-animation: $parameters;
+          animation: $parameters;
+}
+
+// mixin keyframes
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+
+// mixin clearfix
 @mixin clearfix() {
   *zoom: 1;
   &:before, &:after{
@@ -78,7 +102,7 @@
   }
 }
 
-// Background sizing
+// mixin background sizing
 @mixin background-size($size) {
   -webkit-background-size: unquote($size);
      -moz-background-size: unquote($size);
@@ -87,6 +111,15 @@
 }
 
 // Transformations
+
+// mixin transform
+@mixin transform($parameters) {
+  -webkit-transform: $parameters;
+     -moz-transform: $parameters;
+      -ms-transform: $parameters;
+          transform: $parameters;
+}
+// mixin rotate
 @mixin rotate($degrees) {
   -webkit-transform: rotate($degrees);
      -moz-transform: rotate($degrees);
@@ -94,7 +127,7 @@
        -o-transform: rotate($degrees);
           transform: rotate($degrees);
 }
-//mixin scale
+// mixin scale
 @mixin scale($ratio) {
   -webkit-transform: scale($ratio);
      -moz-transform: scale($ratio);
@@ -102,7 +135,7 @@
        -o-transform: scale($ratio);
           transform: scale($ratio);
 }
-//mixin translate
+// mixin translate
 @mixin translate($x, $y) {
   -webkit-transform: translate($x, $y);
      -moz-transform: translate($x, $y);
