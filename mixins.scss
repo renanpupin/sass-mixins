@@ -110,6 +110,13 @@
           background-size: unquote($size);
 }
 
+// mixin calc
+@mixin calc($property, $expression){
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}:    -moz-calc(#{$expression});
+  #{$property}:         calc(#{$expression});
+}
+
 // Transformations
 
 // mixin transform
