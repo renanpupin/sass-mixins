@@ -66,6 +66,23 @@
   transition: $time;
 }
 
+
+//mixin animation duration
+@mixin animation-duration($duration...) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+//mixin animation delay
+@mixin animation-delay ($delay) {
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+    -o-animation-delay: $delay;
+    animation-delay: $delay;
+}
+
 // mixin animation
 @mixin animation($parameters...){
   -webkit-animation: $parameters;
